@@ -1,0 +1,17 @@
+label {
+    color:white;
+    margin-left: 2px;
+}
+
+div {
+    margin: 2px;
+}
+
+.offre {
+    background-color:blue;
+    width: 100%;
+}
+
+select {
+    width: 150px;
+}
