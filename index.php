@@ -94,7 +94,17 @@
                     }
                     for($i=1;$i<=ceil(has_next($page)/$limit);$i++)
                     {
-                        echo "<a href='page$i?metier=$metier&contrat=$contrat&ville=$ville'>$i </a>";
+                        $pages = "<a href='page$i?metier=$metier&contrat=$contrat&ville=$ville";
+                        if(isset($_GET['tri']))
+                        {
+                            $pages = $pages ."&tri=". $_GET['tri'];
+                        }
+                        if(isset($_GET['order']))
+                        {
+                            $pages = $pages ."&order=". $_GET['order'];
+                        }
+                        $pages = $pages."'>$i </a>";
+                        echo $pages;
                     }
                     ?>
                 </div>

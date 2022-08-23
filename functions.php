@@ -22,20 +22,44 @@
         }
         if($type == 'previous')
             if(has_previous($page))
+            {
                 echo "<form method='GET' action='page$x'>
                         <input type='hidden' name='metier' value='$metier'>
                         <input type='hidden' name='contrat' value='$contrat'>
-                        <input type='hidden' name='ville' value='$ville'>
-                        <input type='submit' value='Page Precedente'>
+                        <input type='hidden' name='ville' value='$ville'>";
+                if(isset($_GET['tri']))
+                {
+                    $tri = $_GET['tri'];
+                    echo "<input type='hidden' name='tri' value='$tri'>";
+                }
+                if(isset($_GET['order']))
+                {
+                    $order = $_GET['order'];
+                    echo "<input type='hidden' name='order' value='$order'>";
+                }
+                echo   "<input type='submit' value='Page Precedente'>
                         </form>";
+            }
         if($type == 'next')
             if(has_next($page)>$page*$limit)
+            {
                 echo "<form method='GET' action='page$x'>
                         <input type='hidden' name='metier' value='$metier'>
                         <input type='hidden' name='contrat' value='$contrat'>
-                        <input type='hidden' name='ville' value='$ville'>
-                        <input type='submit' value='Page Suivante'>
+                        <input type='hidden' name='ville' value='$ville'>";
+                if(isset($_GET['tri']))
+                {
+                    $tri = $_GET['tri'];
+                    echo "<input type='hidden' name='tri' value='$tri'>";
+                }
+                if(isset($_GET['order']))
+                {
+                    $order = $_GET['order'];
+                    echo "<input type='hidden' name='order' value='$order'>";
+                }
+                echo   "<input type='submit' value='Page Suivante'>
                         </form>";
+            }
     }
 
     function add_options($table,$name){
